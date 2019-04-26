@@ -1,0 +1,7 @@
+<ul class="beers">
+  <li *ngFor="let beer of beers" [class.selected]="beer === selectedBeer" (click)="onSelect(beer)">
+    <span class="badge">{{beer.id}}</span> {{beer.name}}
+  </li>
+</ul>
+
+<app-beer-detail [beer]="selectedBeer"></app-beer-detail>
