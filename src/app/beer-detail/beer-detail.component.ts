@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Beer } from '../beer';
+import {ActivatedRoute} from '@angular/router';
+import {BeerService} from '../beer.service';
 
 @Component({
   selector: 'app-beer-detail',
@@ -8,10 +10,14 @@ import { Beer } from '../beer';
 })
 export class BeerDetailComponent implements OnInit {
 
-  @Input() beer: Beer;
-  constructor() { }
+  beer: Beer;
+
+  constructor( private route: ActivatedRoute,
+               private beerService: BeerService,
+               private location: Location) { }
 
   ngOnInit() {
+    this.getBeer();
   }
 
 }

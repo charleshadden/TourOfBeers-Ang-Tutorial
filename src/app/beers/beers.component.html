@@ -1,5 +1,7 @@
+<h2>My Beers</h2>
 <ul class="beers">
-  <li *ngFor="let beer of beers" [class.selected]="beer === selectedBeer" (click)="onSelect(beer)">
+  <li *ngFor="let beer of beers">
+  <a routerLink="/detail/{{beer.id}}">
     <span class="badge">{{beer.id}}</span> {{beer.name}}
   </li>
 </ul>
